@@ -216,6 +216,7 @@ class DenseBlock(nn.Module):
             out = getattr(self, 'conv{}'.format(i + 1))(out)
             out = getattr(self, 'norm{}'.format(i + 1))(out)
             out = getattr(self, 'prelu{}'.format(i + 1))(out)
+            skip = out
         return out
 
 class DFNet(nn.Module):
